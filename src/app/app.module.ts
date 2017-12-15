@@ -8,6 +8,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { StoreModule } from '@ngrx/store';
+import { shoppingListReducer } from './shopping-list/store/shopping-list.reducers';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { NgModule } from '@angular/core';
     SharedModule,
     ShoppingListModule,
     AuthModule,
-    CoreModule
+    CoreModule,
+    StoreModule.forRoot({shoppingList: shoppingListReducer})
   ],
   bootstrap: [AppComponent]
 })
